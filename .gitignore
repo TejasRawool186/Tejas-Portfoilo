@@ -1,0 +1,10 @@
+.next
+node_modules
+out
+*.log
+.env
+.env.local
+.DS_Store
+port.mp4
+srs.txt
+tmp_frames/
