@@ -5,7 +5,7 @@ import { SectionHeading } from "./ui/section-heading";
 
 export function Journey() {
   return (
-    <section id="journey" className="px-6 py-24 sm:px-8 lg:px-10">
+    <section id="journey" className="px-4 py-20 sm:px-6 sm:py-24 lg:px-10">
       <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading
@@ -15,21 +15,21 @@ export function Journey() {
           />
         </Reveal>
 
-        <div className="relative mt-16 space-y-10 before:absolute before:left-3 before:top-3 before:h-[calc(100%-1.5rem)] before:w-1 before:bg-primary md:before:left-1/2">
+        <div className="relative mt-12 space-y-8 before:absolute before:left-3 before:top-3 before:h-[calc(100%-1.5rem)] before:w-1 before:bg-primary sm:mt-16 sm:space-y-10 md:before:left-1/2">
           {journey.map((item, index) => (
             <Reveal key={item.year} delay={index * 0.08}>
-              <div className="grid gap-5 md:grid-cols-2 md:gap-12">
+              <div className="grid gap-4 sm:gap-5 md:grid-cols-2 md:gap-12">
                 <div className={index % 2 === 0 ? "md:text-right" : "md:order-2"}>
-                  <p className="font-display text-4xl font-black tracking-[-0.03em] text-highlight">{item.year}</p>
+                  <p className="pl-8 font-display text-3xl font-black tracking-[-0.03em] text-highlight sm:text-4xl md:pl-0">{item.year}</p>
                 </div>
                 <div
-                  className={`relative border-2 border-ink bg-background p-7 shadow-[6px_6px_0_#1A1A1A] ${
+                  className={`relative ml-8 border-2 border-ink bg-background p-5 shadow-[6px_6px_0_#1A1A1A] sm:p-7 md:ml-0 ${
                     index % 2 === 0 ? "md:order-2" : ""
                   }`}
                 >
                   <span className="absolute left-[-1.1rem] top-8 h-4 w-4 rounded-full border-2 border-ink bg-secondary md:left-[-2.3rem]" />
-                  <h3 className="font-display text-2xl font-extrabold tracking-[-0.03em] text-ink">{item.title}</h3>
-                  <p className="mt-3 leading-8 text-[#4d4842]">{item.description}</p>
+                  <h3 className="font-display text-xl font-extrabold tracking-[-0.03em] text-ink sm:text-2xl">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[#4d4842] sm:text-base sm:leading-8">{item.description}</p>
                 </div>
               </div>
             </Reveal>

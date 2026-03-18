@@ -25,8 +25,8 @@ export async function GithubStats() {
   ];
 
   return (
-    <section id="open-source" className="px-6 py-24 sm:px-8 lg:px-10">
-      <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.95fr_1.05fr]">
+    <section id="open-source" className="px-4 py-20 sm:px-6 sm:py-24 lg:px-10">
+      <div className="mx-auto grid max-w-7xl gap-10 sm:gap-14 lg:grid-cols-[0.95fr_1.05fr]">
         <Reveal>
           <SectionHeading
             eyebrow="Open Source Signals"
@@ -39,22 +39,22 @@ export async function GithubStats() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <div className="space-y-6">
-            <div className="bauhaus-panel p-7">
-              <div className="grid gap-4 sm:grid-cols-3">
+          <div className="space-y-5 sm:space-y-6">
+            <div className="bauhaus-panel p-4 sm:p-7">
+              <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                 {metrics.map((metric, index) => {
                   const Icon = metric.icon;
 
                   return (
-                    <div key={metric.label} className="border-2 border-ink bg-card p-6 shadow-[4px_4px_0_#1A1A1A]">
-                      <div className="flex items-center justify-between">
+                    <div key={metric.label} className="border-2 border-ink bg-card p-4 shadow-[4px_4px_0_#1A1A1A] sm:p-6">
+                      <div className="flex items-center justify-between gap-3">
                         <p className="bauhaus-label text-[#6a645d]">{metric.label}</p>
-                        <Icon className="h-5 w-5 text-primary" />
+                        <Icon className="h-5 w-5 shrink-0 text-primary" />
                       </div>
-                      <p className="mt-6 font-display text-5xl font-black tracking-[-0.03em] text-ink">
+                      <p className="mt-5 font-display text-4xl font-black tracking-[-0.03em] text-ink sm:mt-6 sm:text-5xl">
                         {numberFormatter.format(metric.value)}
                       </p>
-                      <div className="mt-6 h-2 border-2 border-ink bg-background">
+                      <div className="mt-5 h-2 border-2 border-ink bg-background sm:mt-6">
                         <div
                           className={`h-full ${index === 0 ? "bg-primary" : index === 1 ? "bg-secondary" : "bg-highlight"}`}
                           style={{ width: `${74 + index * 8}%` }}
@@ -66,21 +66,21 @@ export async function GithubStats() {
               </div>
             </div>
 
-            <div className="bauhaus-panel p-6">
-              <div className="flex items-center justify-between gap-4">
+            <div className="bauhaus-panel p-4 sm:p-6">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
                 <div>
                   <p className="bauhaus-label text-primary">Contribution Matrix</p>
-                  <p className="mt-2 text-sm text-[#4d4842]">Live public GitHub activity from the last 12 months.</p>
+                  <p className="mt-2 text-sm leading-6 text-[#4d4842]">Live public GitHub activity from the last 12 months.</p>
                 </div>
                 <p className="bauhaus-label text-[#6a645d]">{numberFormatter.format(stats.totalContributions)} total</p>
               </div>
 
-              <div className="mt-3 text-xs uppercase tracking-[0.08em] text-[#6a645d]">
+              <div className="mt-3 text-[11px] uppercase tracking-[0.08em] text-[#6a645d] sm:text-xs">
                 Commit total reflects the same live public contribution activity shown in the matrix.
               </div>
 
-              <div className="mt-6 overflow-x-auto">
-                <div className="grid min-w-[760px] grid-rows-7 gap-1" style={{ gridTemplateColumns: "repeat(53, minmax(0, 1fr))" }}>
+              <div className="mt-5 overflow-x-auto pb-1 sm:mt-6">
+                <div className="grid min-w-[620px] grid-rows-7 gap-1 sm:min-w-[760px]" style={{ gridTemplateColumns: "repeat(53, minmax(0, 1fr))" }}>
                   {stats.contributions.map((day) => (
                     <div
                       key={day.date}

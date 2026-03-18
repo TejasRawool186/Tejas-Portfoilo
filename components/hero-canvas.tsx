@@ -43,15 +43,15 @@ function Orb({
 
 export function HeroCanvas() {
   return (
-    <div className="bauhaus-panel relative h-[420px] w-full overflow-hidden bg-card">
+    <div className="bauhaus-panel relative h-[300px] w-full overflow-hidden bg-card sm:h-[360px] lg:h-[420px]">
       <div className="absolute inset-x-0 top-0 bauhaus-strip">
         <span className="bg-highlight" />
         <span className="bg-secondary" />
         <span className="bg-primary" />
       </div>
-      <div className="absolute inset-x-8 top-8 flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.35em] text-[#4d4842]">
+      <div className="absolute inset-x-4 top-5 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.22em] text-[#4d4842] sm:inset-x-8 sm:top-8 sm:text-[11px] sm:tracking-[0.35em]">
         <span>Form / Function</span>
-        <span>Geometric System</span>
+        <span className="hidden sm:inline">Geometric System</span>
       </div>
       <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
         <color attach="background" args={["#F0EDE8"]} />
@@ -66,11 +66,11 @@ export function HeroCanvas() {
         <Orb position={[1.15, 1.25, 0.6]} scale={0.4} color="#FFB703" />
         <OrbitControls enablePan={false} enableZoom={false} autoRotate autoRotateSpeed={0.9} />
       </Canvas>
-      <div className="pointer-events-none absolute inset-x-8 bottom-8 border-2 border-ink bg-background p-4 shadow-[4px_4px_0_#1A1A1A]">
-        <p className="font-display text-lg font-extrabold uppercase tracking-[-0.02em] text-ink">
+      <div className="pointer-events-none absolute inset-x-4 bottom-4 border-2 border-ink bg-background p-3 shadow-[4px_4px_0_#1A1A1A] sm:inset-x-8 sm:bottom-8 sm:p-4">
+        <p className="font-display text-base font-extrabold uppercase tracking-[-0.02em] text-ink sm:text-lg">
           Practical systems, structural visuals.
         </p>
-        <p className="mt-1 text-sm leading-6 text-[#4d4842]">
+        <p className="mt-1 text-xs leading-5 text-[#4d4842] sm:text-sm sm:leading-6">
           Squares, spheres, and contrast blocks keep the hero expressive while staying true to the Bauhaus grid.
         </p>
       </div>
