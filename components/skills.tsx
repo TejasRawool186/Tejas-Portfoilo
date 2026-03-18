@@ -26,22 +26,22 @@ export function Skills() {
             return (
               <Reveal key={category.title} delay={index * 0.05}>
                 <motion.div
-                  whileHover={{ y: -6, scale: 1.01 }}
+                  whileHover={{ x: -2, y: -2 }}
                   transition={{ type: "spring", stiffness: 220, damping: 18 }}
-                  className="rounded-[2rem] bg-white/[0.03] p-7"
+                  className="bauhaus-card p-7"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/25 to-highlight/20 text-highlight">
+                    <div className="inline-flex h-12 w-12 items-center justify-center border-2 border-ink bg-secondary text-ink">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="font-display text-2xl text-white">{category.title}</h3>
+                    <h3 className="font-display text-2xl font-extrabold tracking-[-0.03em] text-ink">{category.title}</h3>
                   </div>
                   <div className="mt-6 flex flex-wrap gap-3">
                     {category.skills.map((skill) => (
                       <motion.span
                         key={skill}
-                        whileHover={{ scale: 1.06 }}
-                        className="rounded-full bg-[#0d1730] px-4 py-2 text-sm text-slate-300"
+                        whileHover={{ x: -1, y: -1 }}
+                        className="border-2 border-ink bg-card px-4 py-2 text-sm text-ink shadow-[3px_3px_0_#1A1A1A]"
                       >
                         {skill}
                       </motion.span>

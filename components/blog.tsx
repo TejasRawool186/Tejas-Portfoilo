@@ -22,13 +22,13 @@ export function Blog() {
             <Reveal key={article.title} delay={index * 0.08}>
               <a
                 href={article.href}
-                className="group block rounded-[2.25rem] bg-white/[0.03] p-8 transition hover:bg-white/[0.05]"
+                className="group block border-2 border-ink bg-background p-8 shadow-[6px_6px_0_#1A1A1A] transition hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-card hover:shadow-[10px_10px_0_#1A1A1A]"
               >
-                <p className="text-sm uppercase tracking-[0.26em] text-highlight">{article.publication}</p>
-                <h3 className="mt-6 max-w-xl font-display text-3xl leading-tight text-white">
+                <p className="bauhaus-label text-highlight">{article.publication}</p>
+                <h3 className="mt-6 max-w-xl font-display text-3xl font-black leading-tight tracking-[-0.03em] text-ink">
                   {article.title}
                 </h3>
-                <div className="mt-8 inline-flex items-center gap-2 text-sm text-slate-300 transition group-hover:text-white">
+                <div className="mt-8 inline-flex items-center gap-2 text-sm text-[#3f3b37] transition group-hover:text-primary">
                   Read article
                   <ArrowUpRight className="h-4 w-4" />
                 </div>

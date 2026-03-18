@@ -6,11 +6,12 @@ type SiteShellProps = {
 
 export function SiteShell({ children }: SiteShellProps) {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#0B1220] text-slate-100">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.20),transparent_28%),radial-gradient(circle_at_top_right,rgba(34,211,238,0.10),transparent_24%),linear-gradient(180deg,#0B1220_0%,#0F1B34_52%,#0B1220_100%)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(148,163,184,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.1)_1px,transparent_1px)] [background-size:72px_72px] [mask-image:radial-gradient(circle_at_center,black,transparent_82%)]" />
-      <div className="pointer-events-none absolute left-[-8rem] top-40 h-80 w-80 rounded-full bg-primary/20 blur-[140px]" />
-      <div className="pointer-events-none absolute bottom-10 right-[-8rem] h-80 w-80 rounded-full bg-highlight/10 blur-[160px]" />
+    <div className="relative min-h-screen overflow-hidden bg-background text-ink">
+      <div className="pointer-events-none absolute inset-0 bauhaus-dot-grid opacity-60" />
+      <div className="pointer-events-none absolute left-[-3rem] top-28 h-28 w-28 border-2 border-ink bg-secondary shadow-brutal animate-float" />
+      <div className="pointer-events-none absolute right-8 top-24 h-24 w-24 rounded-full border-2 border-ink bg-primary shadow-brutal animate-float" />
+      <div className="pointer-events-none absolute bottom-24 left-[8%] h-0 w-0 border-l-[54px] border-r-[54px] border-b-[92px] border-l-transparent border-r-transparent border-b-highlight animate-float" />
+      <div className="pointer-events-none absolute bottom-20 right-[10%] h-20 w-40 rounded-t-full border-2 border-ink border-b-0 bg-card shadow-brutal animate-float" />
       <div className="relative">{children}</div>
     </div>
   );

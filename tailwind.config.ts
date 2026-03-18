@@ -9,43 +9,44 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0F172A",
-        card: "#1E293B",
-        primary: "#6366F1",
-        secondary: "#8B5CF6",
-        highlight: "#22D3EE",
+        background: "#FAFAF8",
+        card: "#F0EDE8",
+        primary: "#1D4ED8",
+        secondary: "#FFB703",
+        highlight: "#E63946",
+        ink: "#1A1A1A",
+        muted: "#B0ADA6",
+        grid: "#C8C4BC",
+        success: "#16A34A",
       },
       fontFamily: {
-        display: ["var(--font-space-grotesk)"],
         body: ["var(--font-inter)"],
-        accent: ["var(--font-poppins)"],
+        display: ["var(--font-inter)"],
+        accent: ["var(--font-inter)"],
+        mono: ["var(--font-mono)"],
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(99,102,241,0.35), 0 0 36px rgba(34,211,238,0.22)",
-        neon: "0 0 45px rgba(99,102,241,0.35)",
+        brutal: "6px 6px 0 #1A1A1A",
+        brutalLg: "10px 10px 0 #1A1A1A",
+        blue: "3px 3px 0 #1D4ED8",
       },
       backgroundImage: {
         "grid-fade":
-          "linear-gradient(rgba(148,163,184,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.12) 1px, transparent 1px)",
+          "linear-gradient(rgba(26,26,26,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(26,26,26,0.12) 1px, transparent 1px)",
       },
       keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-18px)" },
+        floatGeometric: {
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "50%": { transform: "translateY(-8px) rotate(3deg)" },
         },
-        pulseGlow: {
-          "0%, 100%": { opacity: "0.65" },
-          "50%": { opacity: "1" },
-        },
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        float: "float 7s ease-in-out infinite",
-        glow: "pulseGlow 5s ease-in-out infinite",
-        marquee: "marquee 24s linear infinite",
+        float: "floatGeometric 4s ease-in-out infinite",
+        fade: "fadeInUp 200ms ease forwards",
       },
     },
   },

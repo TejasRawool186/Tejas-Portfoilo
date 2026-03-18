@@ -117,7 +117,7 @@ export const projects: Project[] = [
   {
     title: "NutraLingo",
     description:
-      "NutraLingo is a progressive web app that scans foreign-language food labels and translates ingredient risks into clear health insights based on a user’s personal profile. It combines image processing, localization, and AI-assisted analysis into one usable flow.",
+      "NutraLingo is a progressive web app that scans foreign-language food labels and translates ingredient risks into clear health insights based on a user's personal profile. It combines image processing, localization, and AI-assisted analysis into one usable flow.",
     stack: ["Next.js", "AI", "OCR"],
     github: "https://github.com/TejasRawool186/Nutra-Lingo",
     live: "https://nutra-lingo.vercel.app/",
@@ -130,7 +130,6 @@ export const projects: Project[] = [
     stack: ["Next.js", "Realtime", "Translation AI"],
     github: "https://github.com/TejasRawool186/FlowTalk",
     live: "https://flowtalk-alpha.vercel.app/",
-    demo: "https://t.co/7fyb7fdgcu",
   },
   {
     title: "GitHub README Globalizer",
@@ -165,7 +164,7 @@ export const articles: Article[] = [
   },
   {
     title:
-      "How I Built NutraLingo – An AI-Powered Food Label Scanner That Translates & Analyzes Ingredients in Real-Time",
+      "How I Built NutraLingo - An AI-Powered Food Label Scanner That Translates & Analyzes Ingredients in Real-Time",
     href: "https://hashnode.com/edit/cmlyrgenj007t27lvawgngnwy",
     publication: "Hashnode",
   },
@@ -198,3 +197,4 @@ export const writingIntro = {
 };
 
 export const aboutIcon = PenTool;
+

@@ -14,39 +14,42 @@ export function Hero() {
       <div className="grid min-h-[calc(100vh-120px)] items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="space-y-8">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="inline-flex items-center gap-3 rounded-full bg-white/[0.04] px-4 py-2 text-sm text-slate-300 backdrop-blur-md"
+            transition={{ duration: 0.2 }}
+            className="inline-flex items-center gap-3 border-2 border-ink bg-background px-4 py-2 text-sm text-ink shadow-[4px_4px_0_#1A1A1A]"
           >
-            <span className="h-2.5 w-2.5 rounded-full bg-highlight shadow-[0_0_18px_rgba(34,211,238,0.85)]" />
+            <span className="h-3 w-3 rounded-full border border-ink bg-highlight" />
             {heroBadge}
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.08 }}
+            transition={{ duration: 0.2, delay: 0.08 }}
             className="space-y-5"
           >
-            <p className="font-accent text-sm uppercase tracking-[0.35em] text-highlight">
-              AI Developer | Full-Stack Developer | ML Builder
-            </p>
-            <h1 className="font-display text-6xl font-semibold leading-[0.9] text-white sm:text-7xl lg:text-[7rem]">
+            <p className="bauhaus-label text-primary">AI Developer | Full-Stack Developer | ML Builder</p>
+            <h1 className="font-display text-6xl font-black leading-[0.85] tracking-[-0.04em] text-ink sm:text-7xl lg:text-[7rem]">
               TEJAS
               <br />
               RAWOOL
             </h1>
-            <p className="max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">{identityStatement}</p>
-            <p className="max-w-xl text-sm uppercase tracking-[0.28em] text-slate-500">
-              AI applications • machine learning systems • developer tools • full stack web apps
+            <div className="bauhaus-strip max-w-xl">
+              <span className="bg-highlight" />
+              <span className="bg-secondary" />
+              <span className="bg-primary" />
+            </div>
+            <p className="max-w-2xl text-lg leading-8 text-[#3f3b37] sm:text-xl">{identityStatement}</p>
+            <p className="max-w-xl font-mono text-sm uppercase tracking-[0.22em] text-[#6a645d]">
+              AI applications / machine learning systems / developer tools / full stack web apps
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.16 }}
+            transition={{ duration: 0.2, delay: 0.16 }}
             className="flex flex-col gap-4 sm:flex-row"
           >
             <a href="#projects">
@@ -73,11 +76,11 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, x: 32 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.12 }}
+          transition={{ duration: 0.25, delay: 0.12 }}
           className="relative"
         >
-          <div className="absolute -left-8 top-12 h-24 w-24 rounded-full bg-primary/20 blur-3xl" />
-          <div className="absolute -right-8 bottom-8 h-24 w-24 rounded-full bg-highlight/15 blur-3xl" />
+          <div className="absolute -left-8 top-10 h-20 w-20 border-2 border-ink bg-secondary shadow-brutal animate-float" />
+          <div className="absolute -right-4 bottom-10 h-16 w-16 rounded-full border-2 border-ink bg-highlight shadow-brutal animate-float" />
           <HeroCanvas />
         </motion.div>
       </div>

@@ -17,9 +17,9 @@ export function About() {
             {focusAreas.map(({ label, icon: Icon }) => (
               <div
                 key={label}
-                className="inline-flex items-center gap-3 rounded-full bg-white/[0.035] px-4 py-3 text-sm text-slate-300"
+                className="inline-flex items-center gap-3 border-2 border-ink bg-card px-4 py-3 text-sm text-ink shadow-[4px_4px_0_#1A1A1A]"
               >
-                <Icon className="h-4 w-4 text-highlight" />
+                <Icon className="h-4 w-4 text-primary" />
                 {label}
               </div>
             ))}
@@ -27,23 +27,23 @@ export function About() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,rgba(15,27,52,0.92),rgba(36,16,46,0.88),rgba(11,18,32,0.96))] p-8 sm:p-10">
-            <div className="absolute -left-8 top-12 h-36 w-36 rounded-full bg-primary/30 blur-3xl" />
-            <div className="absolute bottom-0 right-0 h-40 w-40 rounded-full bg-rose-500/15 blur-3xl" />
+          <div className="bauhaus-panel relative overflow-hidden p-8 sm:p-10">
+            <div className="absolute right-0 top-0 h-20 w-20 border-b-2 border-l-2 border-ink bg-secondary" />
+            <div className="absolute bottom-8 right-8 h-16 w-16 rounded-full border-2 border-ink bg-highlight animate-float" />
             <div className="relative space-y-8">
-              <p className="font-display text-4xl leading-tight text-white sm:text-5xl">
+              <p className="font-display text-4xl font-black leading-tight tracking-[-0.03em] text-ink sm:text-5xl">
                 Building products where machine intelligence feels clear, fast, and actually usable.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[1.75rem] bg-black/20 p-5">
-                  <p className="text-xs uppercase tracking-[0.26em] text-highlight">Approach</p>
-                  <p className="mt-3 leading-7 text-slate-300">
+                <div className="border-2 border-ink bg-background p-5 shadow-[4px_4px_0_#1A1A1A]">
+                  <p className="bauhaus-label text-highlight">Approach</p>
+                  <p className="mt-3 leading-7 text-[#3f3b37]">
                     Start from a real workflow, reduce complexity, then design the ML or AI layer around utility.
                   </p>
                 </div>
-                <div className="rounded-[1.75rem] bg-black/20 p-5">
-                  <p className="text-xs uppercase tracking-[0.26em] text-highlight">Preference</p>
-                  <p className="mt-3 leading-7 text-slate-300">
+                <div className="border-2 border-ink bg-background p-5 shadow-[4px_4px_0_#1A1A1A]">
+                  <p className="bauhaus-label text-primary">Preference</p>
+                  <p className="mt-3 leading-7 text-[#3f3b37]">
                     Tools that combine good interface decisions with practical automation and measurable output.
                   </p>
                 </div>
