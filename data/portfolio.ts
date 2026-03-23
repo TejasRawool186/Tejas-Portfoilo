@@ -148,13 +148,6 @@ export const journey: TimelineItem[] = [
   { year: "2026", title: "Open source and product development", description: "Focused on public work, stronger engineering quality, and recruiter-ready execution." },
 ];
 
-export const githubMetrics = [
-  { label: "Repositories", value: "32", icon: FolderGit2 },
-  { label: "Stars", value: "74", icon: Sparkles },
-  { label: "Commit Activity", value: "1.2k", icon: Github },
-  { label: "Open Source PRs", value: "28", icon: Rocket },
-];
-
 export const articles: Article[] = [
   {
     title:
@@ -196,5 +189,10 @@ export const writingIntro = {
   icon: BookOpenText,
 };
 
-export const aboutIcon = PenTool;
+export const footerSummary = {
+  title: "Ready to build sharp, useful software.",
+  description:
+    "Open to internships, collaborations, and product ideas that need thoughtful engineering and a strong interface point of view.",
+};
 
+export const aboutIcon = PenTool;

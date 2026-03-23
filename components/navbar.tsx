@@ -1,12 +1,44 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { navItems } from "@/data/portfolio";
 
+const navTargets = navItems.map((item) => ({
+  label: item,
+  id: item.toLowerCase().replace(/\s+/g, "-"),
+}));
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("hero");
+
+  useEffect(() => {
+    const ids = ["hero", ...navTargets.map((item) => item.id)];
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((value): value is HTMLElement => Boolean(value));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visible?.target?.id) {
+          setActive(visible.target.id);
+        }
+      },
+      {
+        rootMargin: "-20% 0px -55% 0px",
+        threshold: [0.2, 0.35, 0.5],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b-2 border-ink bg-background/95 backdrop-blur-sm">
@@ -16,16 +48,24 @@ export function Navbar() {
           <span className="truncate">Tejas Rawool</span>
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {navItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-              className="bauhaus-label text-[#4d4842] transition hover:text-primary"
-            >
-              {item}
-            </a>
-          ))}
+        <nav className="hidden items-center gap-3 lg:flex xl:gap-4">
+          {navTargets.map((item) => {
+            const isActive = active === item.id;
+
+            return (
+              <a
+                key={item.label}
+                href={`#${item.id}`}
+                className={`bauhaus-label border-2 border-ink px-3 py-2 transition ${
+                  isActive
+                    ? "bg-primary text-white shadow-[3px_3px_0_#1A1A1A]"
+                    : "bg-background text-[#4d4842] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-card hover:text-primary hover:shadow-[3px_3px_0_#1A1A1A]"
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
 
         <button
@@ -40,14 +80,16 @@ export function Navbar() {
 
       {open ? (
         <nav className="grid gap-3 border-t-2 border-ink bg-card px-4 py-4 sm:px-6 lg:hidden">
-          {navItems.map((item) => (
+          {navTargets.map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-              className="bauhaus-label border-2 border-ink bg-background px-3 py-3 text-ink shadow-[3px_3px_0_#1A1A1A] transition hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-secondary hover:shadow-[5px_5px_0_#1A1A1A]"
+              key={item.label}
+              href={`#${item.id}`}
+              className={`bauhaus-label border-2 border-ink px-3 py-3 shadow-[3px_3px_0_#1A1A1A] transition ${
+                active === item.id ? "bg-primary text-white" : "bg-background text-ink hover:bg-secondary"
+              }`}
               onClick={() => setOpen(false)}
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </nav>

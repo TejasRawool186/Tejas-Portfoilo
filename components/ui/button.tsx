@@ -11,6 +11,7 @@ const buttonVariants = cva(
         primary: "bg-primary text-white",
         secondary: "bg-secondary text-ink",
         ghost: "bg-background text-ink",
+        accent: "bg-highlight text-white",
       },
     },
     defaultVariants: {

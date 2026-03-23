@@ -29,18 +29,27 @@ export function Hero() {
             transition={{ duration: 0.2, delay: 0.08 }}
             className="space-y-4 sm:space-y-5"
           >
-            <p className="bauhaus-label text-primary">AI Developer | Full-Stack Developer | ML Builder</p>
-            <h1 className="font-display text-[3rem] font-black leading-[0.88] tracking-[-0.04em] text-ink sm:text-6xl lg:text-[7rem]">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <span className="h-10 w-2 bg-primary" />
+              <p className="bauhaus-label text-primary">AI Developer | Full-Stack Developer | ML Builder</p>
+            </div>
+            <h1 className="font-display text-[3rem] font-black leading-[0.84] tracking-[-0.05em] text-ink sm:text-6xl lg:text-[7rem]">
               TEJAS
               <br />
               RAWOOL
             </h1>
+            <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
+              <p className="max-w-2xl text-base leading-7 text-[#3f3b37] sm:text-lg sm:leading-8 lg:text-xl">{identityStatement}</p>
+              <div className="section-frame w-full max-w-[13rem] bg-card px-4 py-3 sm:justify-self-end">
+                <p className="bauhaus-label text-[#6a645d]">Selected Focus</p>
+                <p className="mt-2 font-mono text-sm uppercase tracking-[0.15em] text-ink">Useful AI systems</p>
+              </div>
+            </div>
             <div className="bauhaus-strip max-w-[15rem] sm:max-w-xl">
               <span className="bg-highlight" />
               <span className="bg-secondary" />
               <span className="bg-primary" />
             </div>
-            <p className="max-w-2xl text-base leading-7 text-[#3f3b37] sm:text-lg sm:leading-8 lg:text-xl">{identityStatement}</p>
             <p className="max-w-xl font-mono text-xs uppercase tracking-[0.16em] text-[#6a645d] sm:text-sm sm:tracking-[0.22em]">
               AI applications / machine learning systems / developer tools / full stack web apps
             </p>
@@ -65,7 +74,7 @@ export function Hero() {
               </Button>
             </a>
             <a href="#contact" className="w-full sm:w-auto">
-              <Button variant="ghost" className="w-full gap-2 sm:w-auto">
+              <Button variant="accent" className="w-full gap-2 sm:w-auto">
                 Contact Me
                 <Mail className="h-4 w-4" />
               </Button>

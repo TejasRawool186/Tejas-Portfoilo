@@ -1,5 +1,6 @@
 import { journey } from "@/data/portfolio";
 
+import { Parallax } from "./ui/parallax";
 import { Reveal } from "./ui/reveal";
 import { SectionHeading } from "./ui/section-heading";
 
@@ -27,7 +28,9 @@ export function Journey() {
                     index % 2 === 0 ? "md:order-2" : ""
                   }`}
                 >
-                  <span className="absolute left-[-1.1rem] top-8 h-4 w-4 rounded-full border-2 border-ink bg-secondary md:left-[-2.3rem]" />
+                  <Parallax className="absolute left-[-1.1rem] top-8 md:left-[-2.3rem]" offset={18}>
+                    <span className="block h-4 w-4 rounded-full border-2 border-ink bg-secondary" />
+                  </Parallax>
                   <h3 className="font-display text-xl font-extrabold tracking-[-0.03em] text-ink sm:text-2xl">{item.title}</h3>
                   <p className="mt-3 text-sm leading-7 text-[#4d4842] sm:text-base sm:leading-8">{item.description}</p>
                 </div>

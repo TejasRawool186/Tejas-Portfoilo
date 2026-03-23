@@ -1,5 +1,6 @@
 import { focusAreas } from "@/data/portfolio";
 
+import { Parallax } from "./ui/parallax";
 import { Reveal } from "./ui/reveal";
 import { SectionHeading } from "./ui/section-heading";
 
@@ -28,8 +29,12 @@ export function About() {
 
         <Reveal delay={0.12}>
           <div className="bauhaus-panel relative overflow-hidden p-5 sm:p-8 lg:p-10">
-            <div className="absolute right-0 top-0 h-14 w-14 border-b-2 border-l-2 border-ink bg-secondary sm:h-20 sm:w-20" />
-            <div className="absolute bottom-6 right-6 hidden h-16 w-16 rounded-full border-2 border-ink bg-highlight animate-float sm:block" />
+            <Parallax className="absolute right-0 top-0" offset={20}>
+              <div className="h-14 w-14 border-b-2 border-l-2 border-ink bg-secondary sm:h-20 sm:w-20" />
+            </Parallax>
+            <Parallax className="absolute bottom-6 right-6 hidden sm:block" offset={30}>
+              <div className="h-16 w-16 rounded-full border-2 border-ink bg-highlight animate-float" />
+            </Parallax>
             <div className="relative space-y-6 sm:space-y-8">
               <p className="font-display text-3xl font-black leading-tight tracking-[-0.03em] text-ink sm:text-4xl lg:text-5xl">
                 Building products where machine intelligence feels clear, fast, and actually usable.
